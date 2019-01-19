@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2019-01-18 14:04:57
+/* Smarty version 3.1.32, created on 2019-01-19 01:37:41
   from '/var/www/html/templates/user_detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5c41dd09430ec3_66188589',
+  'unifunc' => 'content_5c427f658952a6_19520873',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b20a8c10224d5ec87ac148cc136d0380fedfdccb' => 
     array (
       0 => '/var/www/html/templates/user_detail.tpl',
-      1 => 1547820295,
+      1 => 1547861828,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c41dd09430ec3_66188589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c427f658952a6_19520873 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE>
 <html>
 	<head>
@@ -67,7 +67,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tweet']->value) {
 							<a href=""><?php echo $_smarty_tpl->tpl_vars['tweet']->value['user_name'];?>
 </a>
 						</div>
-						<div>
+						<div class="tw_content">
 							<p><?php echo $_smarty_tpl->tpl_vars['tweet']->value['body'];?>
 </p><?php if ($_smarty_tpl->tpl_vars['tweet']->value['img_path'] != NULL) {?>
 							<img src="<?php echo $_smarty_tpl->tpl_vars['tweet']->value['img_path'];?>

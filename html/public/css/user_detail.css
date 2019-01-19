@@ -81,6 +81,15 @@ body{
   padding-left: 50px;
 }
 
+.tw_content{
+  padding-left: 50px;
+}
+
+.tw_content img{
+  width: 300px;
+
+}
+
 .img_circle{
     border-radius: 50%;
     height: 50px; 

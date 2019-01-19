@@ -28,7 +28,7 @@
 							<img src="{$tweet['user_img']}" alt="" class="img_circle">
 							<a href="">{$tweet['user_name']}</a>
 						</div>
-						<div>
+						<div class="tw_content">
 							<p>{$tweet['body']}</p>{if $tweet['img_path'] neq NULL}
 							<img src="{$tweet['img_path']}" alt="">{/if} 
 						</div>

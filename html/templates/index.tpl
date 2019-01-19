@@ -52,7 +52,7 @@
 									<strong>@{$tweet['user_id']}</strong>
 								</a>
 							</div>
-							<div>
+							<div class="tw_content">
 								<p>{$tweet['body']}</p>{if $tweet['img_path'] neq NULL}
 								<img src="{$tweet['img_path']}" alt="">{/if} 
 							</div>

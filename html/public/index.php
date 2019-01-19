@@ -37,7 +37,7 @@
 	    if($error_flg == 0){ //トークンエラー
 	    	$error_message = "<p id=\error\" class=\"alert alert-danger\"><strong>不正な送信です。</strong></p>";
 	    }else if($error_flg == 1){ //フィールが入力されていない
-	    	$error_message = "<p id=\"error\" class=\"alert alert-danger\"><strong>入力されていないフィールドがあります。</strong></p>";
+    	$error_message = "<p id=\"error\" class=\"alert alert-danger\"><strong>入力されていないフィールドがあります。</strong></p>";
 	    }else if($error_flg == 2){ //文字数上限エラー
 	    	$error_message = "<p id=\"error\" class=\"alert alert-danger\"><strong>文字数上限を超えた入力があります。</strong></p>";
 	    }else if($error_flg == 3){ //画像エラー
@@ -71,7 +71,17 @@
 
 	//tweet表示
 	
-	$sth = $dbh->prepare('SELECT tweet.* , users.user_name,  users.img_path as user_img FROM tweet, users  where users.user_id = ? AND tweet.user_id = users.user_id OR tweet.user_id = (SELECT follower_id FROM follow where follow_id = ?);');
+	$sth = $dbh->prepare('
+		SELECT tweet.* , users.user_name,  users.img_path as user_img
+		FROM tweet, users
+		WHERE
+			users.user_id = ?
+			AND tweet.user_id = users.user_id
+			OR tweet.user_id = (
+				SELECT follower_id FROM follow where follow_id = ?
+			) 
+		ORDER BY id DESC;
+	');
 	$sth->execute(array($userid, $userid));
 	$result = $sth->fetchAll();
 
